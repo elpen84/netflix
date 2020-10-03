@@ -8,8 +8,10 @@
     "@testing-library/user-event": "^7.1.2",
     "firebase": "^7.22.0",
     "fuse.js": "^6.4.1",
+    "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router": "^5.2.0",
     "react-scripts": "3.4.3",
     "styled-components": "^5.2.0"
   },
