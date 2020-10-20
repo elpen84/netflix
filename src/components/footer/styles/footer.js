@@ -12,15 +12,15 @@ export const Container = styled.div`
   }
 `;
 
-export default Column = styled.div`
-display: flex;
-flex-direction column;
-text-align: left;
+export const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 `;
 
 export const Row = styled.div`
 display: grid;
-grid-template-coumns: repeat(auto-fill, minmax(230px, 1fr))
+grid-template-columns: repeat(auto-fill, minmax(230px, 1fr))
 grid-gap: 15px;
 
 @media(max-media: 1000px;) {
