@@ -25,7 +25,9 @@ user-select: none;
 export const Item = styled.div`
   color: white;
   margin-bottom: 10px;
+  margin: auto;
   max-width: 670px;
+  width: 100%;
 
   &:first-of-type {
     margin-top: 3em;

@@ -22,16 +22,16 @@
 // export default App;
 
 import React from "react";
-import { FaqsContainer } from "./containers/faq";
-import { FooterContainer } from "./containers/footer";
-import { JumbotronContainer } from "./containers/jumbotron";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Home, Browse, Signin, Signup } from "./pages";
+import * as ROUTES from "./constants/routes";
 
 export default function App() {
   return (
-    <>
-      <JumbotronContainer />
-      <FaqsContainer />
-      <FooterContainer />
-    </>
+    <Router>
+      <Route exact path={ROUTES.HOME}>
+        <Home />
+      </Route>
+    </Router>
   );
 }
