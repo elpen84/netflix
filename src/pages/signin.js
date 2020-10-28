@@ -1,5 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import { Form } from "../components";
 
 export default function Signin() {
-  return <p>Hello from the sign in</p>;
+  const [error, setError] = useState("");
+  return (
+    <HeaderContainer>
+      <Form>
+        <Form.Title>Sign In</Form.Title>
+        {error && <Form.Error>{error}</Form.Error>}
+      </Form>
+    </HeaderContainer>
+  );
 }
