@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Footer, Header } from "../components";
-import * as ROUTES from "./constants/routes";
+import * as ROUTES from "../constants/routes";
 import { FirebaseContext } from "../context/firebase";
 import { SelectProfileContainer } from "./profiles";
 import { FooterContainer } from "./footer";
@@ -9,7 +9,7 @@ export function BrowseContainer() {
   const [profile, setProfile] = useState({});
 
   const user = {
-    displayName: "Karl",
+    displayName: "Eddie",
     photoURL: "1",
   };
 
@@ -19,6 +19,6 @@ export function BrowseContainer() {
       <FooterContainer />
     </>
   ) : (
-    <SelectProfileContainer />
+    <SelectProfileContainer user={user} setProfile={setProfile} />
   );
 }
