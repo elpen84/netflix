@@ -4,6 +4,7 @@ import "normalize.css";
 import App from "./app";
 import { GlobalStyles } from "./global-styles";
 import { FirebaseContext } from "./context/firebase";
+// import { seedDatabase } from "./seed";
 
 const config = {
   apiKey: "AIzaSyARcYZ2K4FKMEO8MKsrrnbmkv8QxydIvUg",
@@ -16,6 +17,7 @@ const config = {
 };
 
 const firebase = window.firebase.initializeApp(config);
+// seedDatabase(firebase);
 
 ReactDOM.render(
   <>
