@@ -91,7 +91,7 @@ export function BrowseContainer({ slides }) {
 
       <Card.Group>
         {slideRows.map((slideItem) => (
-          <Card key={`${category}-${slideItem.title.toLowerCase()}`}>
+          <Card key={`${itemFeature.genre}-${slideItem.title.toLowerCase()}`}>
             <Card.Title>{slideItem.title}</Card.Title>
             <Card.Entities>
               {slideItem.data.map((item) => (
@@ -106,6 +106,9 @@ export function BrowseContainer({ slides }) {
                 </Card.Item>
               ))}
             </Card.Entities>
+            <Card.Feature> 
+              <p>Iam a feature</p>
+            </Card.Feature>
           </Card>
         ))}
       </Card.Group>
