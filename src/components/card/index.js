@@ -8,9 +8,10 @@ import {
     Text,
     Feature,
     FeatureTitle,
+    FeatureText,
     FeatureClose,
     Maturity,
-    Context,
+    Content,
     Meta,
     Entities,
     Item,
@@ -45,7 +46,7 @@ Card.SubTitle = function CardSubTitle ({children, ...restProps}) {
 
 
 Card.Text = function CardText ({children, ...restProps}) {
-    return <CardText {...restProps}>{children}</CardText>;
+    return <Text {...restProps}>{children}</Text>;
 }
 
 Card.Entities = function CardEntities({ children, ...restProps }) {

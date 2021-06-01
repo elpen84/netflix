@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Card, Loading } from "../components";
+import Fuse from 'fust.js';
+import { Card, Loading, Profiles, Player } from "../components";
 import { Header } from "../components";
 import * as ROUTES from "../constants/routes";
 import { FirebaseContext } from "../context/firebase";
@@ -29,6 +30,17 @@ export function BrowseContainer({ slides }) {
   useEffect(() => {
     setSlideRows(slides[category]);
   }, [slides, category]);
+
+  useEffect(() => {
+    const fuse = new Fuse(slideRows, { keys: ['data.description', 'data.title', 'data.genre'] });
+    const results = fuse.search(searchTerm).map(({ item }) => item);
+    
+    if (slideRows.length > 0 && searchTerm.length > 3 && results.length > 0) {
+        setSlideRows(results);
+    } else {
+        setSlideRows(slides[category]);
+    }
+  }, [searchTerm])
 
   return profile.displayName ? (
     <>
@@ -91,7 +103,7 @@ export function BrowseContainer({ slides }) {
 
       <Card.Group>
         {slideRows.map((slideItem) => (
-          <Card key={`${itemFeature.genre}-${slideItem.title.toLowerCase()}`}>
+          <Card key={`${category}-${slideItem.title.toLowerCase()}`}>
             <Card.Title>{slideItem.title}</Card.Title>
             <Card.Entities>
               {slideItem.data.map((item) => (
@@ -106,8 +118,11 @@ export function BrowseContainer({ slides }) {
                 </Card.Item>
               ))}
             </Card.Entities>
-            <Card.Feature> 
-              <p>Iam a feature</p>
+            <Card.Feature category={category} > 
+              <Player>
+                <Player.Button />
+                <Player.Video />
+              </Player>
             </Card.Feature>
           </Card>
         ))}
